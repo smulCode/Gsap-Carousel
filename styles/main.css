@@ -1,0 +1,38 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.carousel-container {
+  background-color: red;
+  border: 1px solid blue;
+  height: 300px;
+  width: 500px;
+}
+
+.carousel-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: purple;
+  border: 1px solid yellow;
+  height: 100%;
+  width: 100%;
+  list-style-type: none;
+}
+
+.carousel-items {
+  background-color: aqua;
+  border: 10px solid green;
+  height: 100%;
+  width: 100%;
+}
+
+.main-container {
+  height: 100vh;
+  background-color: #1e1e1e;
+  display: grid;
+  place-content: center;
+}/*# sourceMappingURL=main.css.map */
