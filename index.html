@@ -11,14 +11,18 @@
   </head>
   <body>
     <div class="main-container" id="main-container">
-      <div class="invisible-dragcontainer"></div>
+      <div class="invisible-dragcontainer">
       <div class="carousel-container" id="carousel-container">
         <ul class="carousel-list" id="slide">
-          <li class="carousel-items" ></li>
-          <li class="carousel-items" ></li>
-          <li class="carousel-items" ></li>
+          <li class="carousel-items current-slide" >1</li>
+          <li class="carousel-items" >2</li>
+          <li class="carousel-items" >3</li>
         </ul>
       </div>
+    </div>
+    <nav class="slide-navigation">
+      <button class="slide-indicator current-indicator">-</button><button class="slide-indicator">-</button><button class="slide-indicator">-</button>
+    </nav>
     </div>
     <script type="module" src="./JS/main.js"></script>
   </body>

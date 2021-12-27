@@ -7,18 +7,20 @@
 }
 
 .carousel-container {
+  position: relative;
   background-color: red;
   border: 1px solid blue;
   height: 300px;
   width: 500px;
+  padding: 5em;
 }
 
 .carousel-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
   background-color: purple;
   border: 1px solid yellow;
-  height: 100%;
   width: 100%;
   list-style-type: none;
 }
@@ -26,8 +28,29 @@
 .carousel-items {
   background-color: aqua;
   border: 10px solid green;
+  margin: 1em;
   height: 100%;
   width: 100%;
+  text-align: center;
+}
+
+.slide-navigation {
+  margin: 0 auto;
+}
+
+.slide-indicator {
+  padding: 0 1px;
+  background-color: transparent;
+  color: #cececea8;
+  border: none;
+  font-size: 4em;
+}
+.slide-indicator:Hover {
+  cursor: pointer;
+}
+
+.current-indicator {
+  color: white;
 }
 
 .main-container {

@@ -1,22 +1,28 @@
 .carousel-container {
+    position: relative;
     background-color: red;
     border: 1px solid blue;
     height: 300px;
     width: 500px;
+    padding: 5em;
 }
 .carousel-list{
-    display:grid;
-    grid-template-columns: 1fr 1fr 1fr ;
+    position: absolute;
+    display:flex;
+    justify-content:space-between;
     background-color:purple;
     border: 1px solid yellow;
-    height: 100%;
+    // height: 100%;
     width: 100%;
     list-style-type: none;
+    // place-content: center;
 }
 
 .carousel-items{
     background-color:aqua;
     border: 10px solid green;
+    margin: 1em;
     height: 100%;
     width: 100%;
+    text-align: center;
 }

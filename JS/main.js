@@ -5,7 +5,7 @@ Draggable.create("#slide");
 
 Draggable.create("#slide", {
     type:"x",
-    bounds: document.getElementById("carousel-container"),
+    bounds: document.getElementById("main-container"),
     inertia: true,
     onClick: function() {
         console.log("clicked");

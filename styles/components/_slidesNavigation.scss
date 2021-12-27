@@ -1,0 +1,19 @@
+.slide-navigation{
+    margin: 0 auto;
+}
+
+.slide-indicator{
+    padding: 0 1px ;
+    background-color:transparent;
+    color: #cececea8;
+    border: none;
+    font-size: 4em;
+
+    &:Hover{
+        cursor: pointer;
+    }
+}
+
+.current-indicator{
+    color: white;
+}
