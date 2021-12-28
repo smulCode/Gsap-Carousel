@@ -1,9 +1,18 @@
 // import {example} from "./modules/example.js"
+const carousel = document.querySelector(".carousel-container")
 const track = document.querySelector(".carousel-track");
 const slides = Array.from(track.children);
 const dotsNav = document.querySelector(".carousel-nav");
 const dots = Array.from(dotsNav.children);
-let slidesX = 0;
+const images = [
+  "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+
+  "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80",
+
+  "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+];
+
+
 // console.log(slides);
 const slideWidth = slides[0].getBoundingClientRect().width;
 
@@ -14,34 +23,31 @@ const setSlidePosition = (slide, index) => {
 };
 
 slides.forEach(setSlidePosition)
+slides.forEach((slide, index) => {
+  slide.style.backgroundImage = `url(${images[index]})`;
+ 
+
+})
 
 
-// const moveToSlide = (track, currentSlide, targetSlide) => {
-//   track.style.transform = "translateX(-" + targetSlide.style.left + ")";
 
-// console.log(track.style.transform);
 
-//   currentSlide.classList.remove("current-slide");
-//   targetSlide.classList.add("current-slide");
-// };
 let sizeX = 0;
 dotsNav.addEventListener("click", function (e) {
   const targetDot = e.target.closest("button");
 
   if (!targetDot) return;
 
-  const currentSlide = track.querySelector(".current-slide");
+  
   const currentDot = dotsNav.querySelector(".current-slide");
   const targetIndex = dots.findIndex((dot) => dot === targetDot);
   const targetSlide = slides[targetIndex];
-  console.log(parseInt(targetSlide.style.left));
+  let carouselBg = carousel.style.backgroundImage = `url(${images[targetIndex]})`;
+  
   const slideX = parseInt(targetSlide.style.left);
-  sizeX = slideX;
-console.log(sizeX);
-  // moveToSlide(track, currentSlide, targetSlide);
   updateDots(currentDot, targetDot);
   console.log("click");
-  
+
 
 })
 
