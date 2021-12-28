@@ -32,7 +32,6 @@ slides.forEach((slide, index) => {
 
 
 
-let sizeX = 0;
 dotsNav.addEventListener("click", function (e) {
   const targetDot = e.target.closest("button");
 
@@ -45,10 +44,22 @@ dotsNav.addEventListener("click", function (e) {
   let carouselBg = carousel.style.backgroundImage = `url(${images[targetIndex]})`;
   
   const slideX = parseInt(targetSlide.style.left);
+console.log(slideX);
   updateDots(currentDot, targetDot);
   console.log("click");
 
+  const tween = gsap.to(".carousel-slide", {
+    x: -(slideX), 
+    duration: 1, 
+    ease: "expo",
+    stagger:0.25, 
+    paused: true,
+    
+    
+   
+  });
 
+tween.play();
 })
 
 
@@ -58,40 +69,6 @@ const updateDots = (currentDot, targetDot) => {
   targetDot.classList.add("current-slide");
 };
 
-
-const tween = gsap.to(".carousel-slide", {
-  x: -(slideWidth), 
-  duration: 2, 
-  ease: "expo",
-  stagger:0.15, 
-  paused: true,
- 
-});
-
-const tween2 = gsap.to(".carousel-slide", {
-  x: -(slideWidth * 2), 
-  duration: 2, 
-  ease: "expo",
-  stagger:0.15, 
-  paused: true,
- 
-});
-
-// click handlers for controlling the tween instance...
-
-
-dots[2].onclick = () => tween2.play();
-dots[1].onclick = () => tween.play() && tween2.reverse();
-dots[0].onclick = () =>  tween.reverse() && tween2.reverse();
-
-// dots[0].onclick = () => tween2.reverse();
-// dots[0].onclick = () => tween3.reverse();
-
-// Draggable.create("#track");
-
-// let x = gsap.getProperty("#track", "x", "px"); 
-
-// console.log(x);
 
 
 // Draggable.create("#track", {
