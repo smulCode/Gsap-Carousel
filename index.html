@@ -11,19 +11,27 @@
   </head>
   <body>
     <div class="main-container" id="main-container">
-      <div class="invisible-dragcontainer">
+      <div class="invisible-dragcontainer" id="draggable-container">
       <div class="carousel-container" id="carousel-container">
-        <ul class="carousel-list" id="slide">
-          <li class="carousel-items current-slide" >1</li>
-          <li class="carousel-items" >2</li>
-          <li class="carousel-items" >3</li>
+        <ul class="carousel-track" id="track" >
+          <li class="carousel-slide current-slide" >1</li>
+          <li class="carousel-slide"  >2</li>
+          <li class="carousel-slide" >3</li>
         </ul>
       </div>
     </div>
-    <nav class="slide-navigation">
-      <button class="slide-indicator current-indicator">-</button><button class="slide-indicator">-</button><button class="slide-indicator">-</button>
-    </nav>
+
+    
+    <div class="carousel-nav">
+      <button class="carousel-indicator current-slide"></button>
+      <button class="carousel-indicator"></button>
+      <button class="carousel-indicator"></button>
     </div>
+
+  
+    </div>
+
+
     <script type="module" src="./JS/main.js"></script>
   </body>
 </html>

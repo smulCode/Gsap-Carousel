@@ -9,48 +9,53 @@
 .carousel-container {
   position: relative;
   background-color: red;
-  border: 1px solid blue;
+  border: 10px solid blue;
   height: 300px;
-  width: 500px;
-  padding: 5em;
+  width: 400px;
+  padding: 2em;
+  overflow: hidden;
 }
 
-.carousel-list {
-  position: absolute;
-  display: flex;
-  justify-content: space-between;
+.carousel-track {
+  display: grid;
+  grid-template-columns: 100% 100% 100%;
   background-color: purple;
   border: 1px solid yellow;
+  height: 100%;
   width: 100%;
   list-style-type: none;
 }
 
-.carousel-items {
+.carousel-slide {
   background-color: aqua;
-  border: 10px solid green;
-  margin: 1em;
+  border: 1px solid green;
   height: 100%;
   width: 100%;
   text-align: center;
+  font-size: 3em;
 }
 
-.slide-navigation {
+.invisible-dragcontainer {
+  border: 10px solid orange;
+}
+
+.carousel-nav {
   margin: 0 auto;
 }
 
-.slide-indicator {
-  padding: 0 1px;
+.carousel-indicator {
+  padding: 5px 15px;
   background-color: transparent;
-  color: #cececea8;
-  border: none;
+  background-color: #cececea8;
   font-size: 4em;
+  border: none;
 }
-.slide-indicator:Hover {
+.carousel-indicator:Hover {
   cursor: pointer;
 }
 
-.current-indicator {
-  color: white;
+.carousel-indicator.current-slide {
+  background-color: white;
 }
 
 .main-container {

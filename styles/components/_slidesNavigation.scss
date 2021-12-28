@@ -1,19 +1,19 @@
-.slide-navigation{
+.carousel-nav{
     margin: 0 auto;
 }
 
-.slide-indicator{
-    padding: 0 1px ;
+.carousel-indicator{
+    padding: 5px 15px;
     background-color:transparent;
-    color: #cececea8;
-    border: none;
+    background-color: #cececea8;
     font-size: 4em;
+    border: none;
 
     &:Hover{
         cursor: pointer;
     }
 }
 
-.current-indicator{
-    color: white;
+.carousel-indicator.current-slide{
+    background-color: white;
 }
