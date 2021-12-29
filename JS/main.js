@@ -37,37 +37,62 @@ dotsNav.addEventListener("click", function (e) {
 
   if (!targetDot) return;
 
-  
+  const currentSlide = track.querySelector(".current-slide");
   const currentDot = dotsNav.querySelector(".current-slide");
   const targetIndex = dots.findIndex((dot) => dot === targetDot);
   const targetSlide = slides[targetIndex];
-  let carouselBg = carousel.style.backgroundImage = `url(${images[targetIndex]})`;
-  
+  const currentDotIndex = dots.findIndex((dot) => dot === currentDot);
   const slideX = parseInt(targetSlide.style.left);
-console.log(slideX);
+  const carouselBg = carousel.style.backgroundImage = `url(${images[targetIndex]})`;
+
   updateDots(currentDot, targetDot);
-  console.log("click");
+  setCurrentSlide(track, currentSlide, targetSlide);
 
-  const tween = gsap.to(".carousel-slide", {
-    x: -(slideX), 
-    duration: 1, 
-    ease: "expo",
-    stagger:0.25, 
-    paused: true,
-    
-    
+
+  if (targetIndex < currentDotIndex){
+  
+    let tween = gsap.to(".carousel-slide", {
+      x: -(slideX), 
+      duration: 1.5, 
+      ease: "expo.inOut",
+      stagger:-0.20, 
+      pause:true,
+
+    })
+    tween.play();
+    console.log('reverse');
+
+  } else{
+    let tween = gsap.to(".carousel-slide", {
+      x: -(slideX), 
+      duration: 1, 
+      ease: "expo.inOut",
+      stagger:0.20, 
+      pause:true,
+      
+     
+    });
+    tween.play();
+    console.log("play");
    
-  });
 
-tween.play();
+  }
+
+
+
 })
 
 
+const setCurrentSlide = (currentSlide, targetSlide) => {
+  currentSlide.classList.remove("current-slide");
+  targetSlide.classList.add("current-slide");
 
+};
 const updateDots = (currentDot, targetDot) => {
   currentDot.classList.remove("current-slide");
   targetDot.classList.add("current-slide");
 };
+
 
 
 
