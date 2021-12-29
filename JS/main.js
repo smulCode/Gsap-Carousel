@@ -62,16 +62,7 @@ dotsNav.addEventListener("click", function (e) {
     console.log("play");
   }
 
-  gsap.to(".active", {
-    keyframes: {
-      y: [0, 10, 10, 10, 0],
-      ease: "none",
-      opacity:[1, 0.5, 1, 1, 1],
-    },
-    duration: 0.1
-  });
-
-
+  
 });
 
 const setCurrentSlide = (currentSlide, targetSlide) => {
@@ -84,6 +75,23 @@ const updateDots = (currentDot, targetDot) => {
   targetDot.classList.add("current-slide");
   targetDot.classList.add("active");
 };
+
+
+
+
+
+// const activeDot = gsap.to(".active", {
+//   keyframes: {
+//     x: [0, 0, 15, 15, 15],
+//     y: [0, 10, 10, 10, 0],
+//     ease: "none",
+//     opacity:[1, 0.5, 0, 0, 1],
+//     stagger: 0.2,
+//   },
+//   duration: 0.15,
+// });
+
+// activeDot.restart();
 
 // const dotAnimation = gsap.timeline();
 // dotAnimation

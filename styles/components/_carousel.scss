@@ -2,13 +2,13 @@
     position: relative;
     background-image: url("https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
     // border: 10px solid blue;
-    height: 300px;
-    width: 400px;
+    height: 60vh;
+    min-width:100vw;
     padding: 4em 3em;
     background-size: cover;
     background-position:center;
     overflow:hidden;
-    background-color: red;
+    // background-color: red;
     transition: all .5s ease-in-out;
   
 

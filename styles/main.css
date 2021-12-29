@@ -9,13 +9,12 @@
 .carousel-container {
   position: relative;
   background-image: url("https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
-  height: 300px;
-  width: 400px;
+  height: 60vh;
+  min-width: 100vw;
   padding: 4em 3em;
   background-size: cover;
   background-position: center;
   overflow: hidden;
-  background-color: red;
   transition: all 0.5s ease-in-out;
 }
 
@@ -56,33 +55,22 @@
   width: 45px;
   height: 1px;
   place-content: center;
-  margin: 0 auto;
+  margin: -3.5em auto;
 }
 
 .carousel-indicator {
   position: relative;
   background-color: transparent;
-  background-color: #cececea8;
+  background-color: #cecece33;
   border: none;
   border-radius: 13%;
-  padding: 1px 15px;
+  padding: 1px 5px;
 }
 .carousel-indicator:Hover {
   cursor: pointer;
 }
-.active .carousel-indicator:before {
-  content: "";
-  position: absolute;
-  height: 12px;
-  background-color: red;
-  width: 12px;
-}
 
 .carousel-indicator.current-slide {
-  background-color: rgba(255, 255, 255, 0.904);
-}
-
-.active {
   background-color: rgba(255, 255, 255, 0.904);
 }
 
