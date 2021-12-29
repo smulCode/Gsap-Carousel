@@ -43,7 +43,7 @@ dotsNav.addEventListener("click", function (e) {
   const targetSlide = slides[targetIndex];
   const currentDotIndex = dots.findIndex((dot) => dot === currentDot);
   const slideX = parseInt(targetSlide.style.left);
-  const carouselBg = carousel.style.backgroundImage = `url(${images[targetIndex]})`;
+  carousel.style.backgroundImage = `url(${images[targetIndex]})`;
 
   updateDots(currentDot, targetDot);
   setCurrentSlide(track, currentSlide, targetSlide);
@@ -56,19 +56,21 @@ dotsNav.addEventListener("click", function (e) {
       duration: 1.5, 
       ease: "expo.inOut",
       stagger:-0.20, 
-      pause:true,
+      // pause:true,
 
     })
     tween.play();
+    // tweenCarousel.play();
     console.log('reverse');
+    
 
   } else{
     let tween = gsap.to(".carousel-slide", {
       x: -(slideX), 
-      duration: 1, 
+      duration: 1.5, 
       ease: "expo.inOut",
       stagger:0.20, 
-      pause:true,
+      // pause:true,
       
      
     });
@@ -77,9 +79,7 @@ dotsNav.addEventListener("click", function (e) {
    
 
   }
-
-
-
+ 
 })
 
 
@@ -93,8 +93,9 @@ const updateDots = (currentDot, targetDot) => {
   targetDot.classList.add("current-slide");
 };
 
-
-
+const dotAnimation = gsap.to(".active",{
+  
+})
 
 // Draggable.create("#track", {
 //     type:"x",

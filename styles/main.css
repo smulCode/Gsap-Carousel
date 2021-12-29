@@ -15,6 +15,8 @@
   background-size: cover;
   background-position: center;
   overflow: hidden;
+  background-color: red;
+  transition: all 0.5s ease-in-out;
 }
 
 .carousel-track {
@@ -40,7 +42,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.102);
   -webkit-backdrop-filter: blur(1.5px);
           backdrop-filter: blur(1.5px);
   height: 100%;

@@ -8,8 +8,8 @@
     background-size: cover;
     background-position:center;
     overflow:hidden;
-
-    
+    background-color: red;
+    transition: all .5s ease-in-out;
   
 
 }
@@ -47,7 +47,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background: rgba(255, 255, 255, 0.1); // Make sure this color has an opacity of less than 1
+    background: rgba(255, 255, 255, 0.102); // Make sure this color has an opacity of less than 1
     backdrop-filter: blur(1.5px); // This be the blur
     height: 100%;
     width: 100%;
