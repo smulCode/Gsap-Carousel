@@ -114,20 +114,19 @@ const updateDots = (currentDot, targetDot) => {
 
 
 
-
 // Draggable.create("#track", {
 //     type:"x",
-//     bounds: document.getElementById("main-container"),
+//     // bounds: document.getElementById("main-container"),
 //     inertia: true,
 
 //     onClick: function() {
 //         console.log("clicked");
-//         console.log(x);
+      
 
 //     },
 //     onDragEnd: function() {
 //         console.log("drag ended");
-//         console.log(x);
+       
 
 //     }
 // });
