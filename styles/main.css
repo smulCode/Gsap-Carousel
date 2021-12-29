@@ -50,22 +50,40 @@
 }
 
 .carousel-nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1px;
+  width: 45px;
+  height: 1px;
+  place-content: center;
   margin: 0 auto;
 }
 
 .carousel-indicator {
-  padding: 5px 15px;
+  position: relative;
   background-color: transparent;
   background-color: #cececea8;
-  font-size: 4em;
   border: none;
+  border-radius: 13%;
+  padding: 1px 15px;
 }
 .carousel-indicator:Hover {
   cursor: pointer;
 }
+.active .carousel-indicator:before {
+  content: "";
+  position: absolute;
+  height: 12px;
+  background-color: red;
+  width: 12px;
+}
 
 .carousel-indicator.current-slide {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.904);
+}
+
+.active {
+  background-color: rgba(255, 255, 255, 0.904);
 }
 
 .main-container {
