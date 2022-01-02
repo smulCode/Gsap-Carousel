@@ -1,15 +1,21 @@
+
+
 .carousel-container {
     position: relative;
     background-image: url("https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
     // border: 10px solid blue;
-    height: 68vh;
-    min-width:300px;
-    padding: 5.2em 4em;
+    // height: 68vh;
+    min-width:100vw;
+    padding: 5.2em 6em;
+    height: 500px;
+    min-width: 800px;
+
     background-size: cover;
     background-position:center;
     overflow:hidden;
     // background-color: red;
     transition: all .5s ease-in-out;
+    
   
 
 }
@@ -52,9 +58,43 @@
     height: 100%;
     width: 100%;
   }
-// .invisible-dragcontainer{
-//     border: 10px solid orange;
+.invisible-dragcontainer{
+    // border: 10px solid orange;
 
-// }
+}
 
 
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: 0;
+    z-index: 5;
+    height:100%;
+    // border: 1px solid hotpink;
+
+    &:hover{
+      cursor: pointer;
+    }
+  }
+  
+  .carousel-button--left {
+    left: 8vw;
+    height:60%;
+  }
+  
+  .carousel-button--right {
+    right: 8vw;
+    height:40%;
+  }
+  .carousel-button i {
+    width: 12vw;
+//  color: black; 
+    color: transparent;
+  }
+  
+  .is-hidden {
+    display: none;
+  }
+  
