@@ -144,12 +144,11 @@ const updateDots = (currentDot, targetDot) => {
 
 
 
-// Draggable.create("#track", {
+// Draggable.create(".carousel-slide", {
 //     type:"x",
-//     // bounds: document.getElementById("main-container"),
-//     inertia: true,
-//     liveSnap: {
-//       points: [{x: (-slideWidth * 2), y: 0}],
+//     bounds: document.getElementById("#track"),
+//         liveSnap: {
+//       points: [{x: 30, y: 0}],
 //       radius: 15,
 //   // we can also use this notation
 //   // points [{x: 0, y: 0}, {x: 30, y: 40}]
