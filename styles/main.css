@@ -97,7 +97,7 @@
   background-color: #cecece33;
   border: none;
   border-radius: 13%;
-  padding: 1px 5px;
+  padding: 1.5px 15px;
 }
 .carousel-indicator:Hover {
   cursor: pointer;
@@ -107,9 +107,13 @@
   background-color: rgba(255, 255, 255, 0.904);
 }
 
+body {
+  overflow: hidden;
+}
+
 .main-container {
-  height: 100vh;
   background-color: #1e1e1e;
   display: grid;
   place-content: center;
+  margin-top: 10vh;
 }/*# sourceMappingURL=main.css.map */

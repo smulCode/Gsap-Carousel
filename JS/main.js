@@ -135,11 +135,15 @@ const setCurrentSlide = (currentSlide, targetSlide) => {
 };
 const updateDots = (currentDot, targetDot) => {
   currentDot.classList.remove("current-slide");
-  currentDot.classList.remove("active");
   targetDot.classList.add("current-slide");
-  targetDot.classList.add("active");
+  
 };
 
+
+const MasterTimeline = gsap.timeline({defaults: {duration:1,}})
+MasterTimeline
+.from(".main-container", {y:"100%", x:0, opacity:0 , ease:"power4.out", delay:1})
+.from(".carousel-track", {opacity:0,scale:0.8, ease:"power1.out",delay:1,})
 
 
 
@@ -184,3 +188,4 @@ const updateDots = (currentDot, targetDot) => {
 
 //     positionAllSlides();
 //   }
+
