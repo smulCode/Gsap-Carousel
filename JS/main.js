@@ -14,7 +14,6 @@ const images = [
   "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
 ];
 
-// console.log(slides);
 const slideWidth = slides[0].getBoundingClientRect().width;
 
 const setSlidePosition = (slide, index) => {
@@ -27,8 +26,7 @@ slides.forEach((slide, index) => {
   slide.style.backgroundImage = `url(${images[index]})`;
 });
 
-
-const moveToSlide = (track,currentSlide, targetSlide) => {
+const moveToSlide = (track, currentSlide, targetSlide) => {
   currentSlide.classList.remove("current-slide");
   targetSlide.classList.add("current-slide");
   const targetIndex = slides.findIndex((slide) => slide === targetSlide);
@@ -36,13 +34,11 @@ const moveToSlide = (track,currentSlide, targetSlide) => {
   const slideX = parseInt(targetSlide.style.left);
   carousel.style.backgroundImage = `url(${images[targetIndex]})`;
   if (targetIndex < currentSlideIndex) {
-
     let tween = gsap.to(".carousel-slide", {
       x: -slideX,
       duration: 1.5,
       ease: "expo.inOut",
       stagger: -0.2,
-
     });
     tween.play();
     console.log("reverse");
@@ -52,15 +48,11 @@ const moveToSlide = (track,currentSlide, targetSlide) => {
       duration: 1.5,
       ease: "expo.inOut",
       stagger: 0.2,
- 
     });
     tween.play();
     console.log("play");
   }
-
 };
-
-
 
 const hideShowArrows = (slides, prevButton, nextButton, targetIndex) => {
   console.log(targetIndex);
@@ -90,27 +82,18 @@ prevButton.addEventListener("click", (e) => {
   hideShowArrows(slides, prevButton, nextButton, prevIndex);
 });
 
-
+//When i click right ,move slides to the right
 nextButton.addEventListener("click", (e) => {
   const currentSlide = track.querySelector(".current-slide");
   const nextSlide = currentSlide.nextElementSibling;
   const currentDot = dotsNav.querySelector(".current-slide");
   const nextDot = currentDot.nextElementSibling;
   const nextIndex = slides.findIndex((slide) => slide === nextSlide);
-  
- 
-
 
   moveToSlide(track, currentSlide, nextSlide);
   updateDots(currentDot, nextDot);
   hideShowArrows(slides, prevButton, nextButton, nextIndex);
 });
-
-
-
-
-
-
 
 dotsNav.addEventListener("click", function (e) {
   const targetDot = e.target.closest("button");
@@ -121,12 +104,10 @@ dotsNav.addEventListener("click", function (e) {
   const currentDot = dotsNav.querySelector(".current-slide");
   const targetIndex = dots.findIndex((dot) => dot === targetDot);
   const targetSlide = slides[targetIndex];
- 
 
   moveToSlide(track, currentSlide, targetSlide);
   updateDots(currentDot, targetDot);
   hideShowArrows(slides, prevButton, nextButton, targetIndex);
-
 });
 
 const setCurrentSlide = (currentSlide, targetSlide) => {
@@ -136,56 +117,19 @@ const setCurrentSlide = (currentSlide, targetSlide) => {
 const updateDots = (currentDot, targetDot) => {
   currentDot.classList.remove("current-slide");
   targetDot.classList.add("current-slide");
-  
 };
 
-
-const MasterTimeline = gsap.timeline({defaults: {duration:1,}})
-MasterTimeline
-.from(".main-container", {y:"100%", x:0, opacity:0 , ease:"power4.out", delay:1})
-.from(".carousel-track", {opacity:0,scale:0.8, ease:"power1.out",delay:1,})
-
-
-
-
-// Draggable.create(".carousel-slide", {
-//     type:"x",
-//     bounds: document.getElementById("#track"),
-//         liveSnap: {
-//       points: [{x: 30, y: 0}],
-//       radius: 15,
-//   // we can also use this notation
-//   // points [{x: 0, y: 0}, {x: 30, y: 40}]
-//     },
-
-
-//     onClick: function() {
-//         console.log("clicked");
-//         console.log(this.getDirection());
-      
-
-//     },
-//     onDragEnd: function() {
-//         console.log("drag ended");
-//         console.log(this.getDirection());
-
-//     }
-// });
-
-
-
-//Eelke
-// Draggble.create(draggable-container, {
-//     bounds: {minX: -20, ,maxX: 20 },
-//     type: 'x',
-//     onDragEnd: (value) => checkIfDraggedEnoughToUpdateActiveIndex(value)
-//   })
-
-//   checkIfDraggedEnoughToUpdateActiveIndex(value) {
-//     if (dragging <15) {
-//       activeIndex + 1;
-//     }
-
-//     positionAllSlides();
-//   }
+const MasterTimeline = gsap.timeline({ defaults: { duration: 1 } });
+MasterTimeline.from(".main-container", {
+  y: "100%",
+  x: 0,
+  opacity: 0,
+  ease: "power4.out",
+  delay: 1,
+}).from(".carousel-track", {
+  opacity: 0,
+  scale: 0.8,
+  ease: "power1.out",
+  delay: 1,
+});
 

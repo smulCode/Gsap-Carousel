@@ -10,13 +10,20 @@
   position: relative;
   background-image: url("https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
   min-width: 100vw;
-  padding: 5.2em 6em;
-  height: 500px;
+  padding: 8em 7em;
+  height: 600px;
   width: 800px;
   background-size: cover;
   background-position: center;
   overflow: hidden;
   transition: all 0.5s ease-in-out;
+}
+.carousel-container::before {
+  position: absolute;
+  inset: 0;
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  content: "";
 }
 
 .carousel-track {
@@ -36,17 +43,6 @@
   background-position: center;
   background-repeat: no-repeat;
   z-index: 2;
-}
-
-.blur {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: rgba(255, 255, 255, 0.102);
-  -webkit-backdrop-filter: blur(1.5px);
-          backdrop-filter: blur(1.5px);
-  height: 100%;
-  width: 100%;
 }
 
 .carousel-button {
@@ -88,7 +84,7 @@
   width: 45px;
   height: 1px;
   place-content: center;
-  margin: -4.5em auto;
+  margin: -6.5em auto;
 }
 
 .carousel-indicator {

@@ -12,10 +12,15 @@
     <title>gsap carousel</title>
   </head>
   <body>
+
+    <div id="output">
+      <ul>
+        <li><span id="value"></span></li>
+      </ul>
+    </div>
     <div class="main-container" id="main-container">
       <div class="invisible-dragcontainer" id="draggable-container">
       <div class="carousel-container" id="carousel">
-        <div class="blur"></div>
         <button class="carousel-button carousel-button--left is-hidden">
           <i class="fas fa-angle-left fa-2x"></i></button>
         <ul class="carousel-track" id="track" >
@@ -38,7 +43,9 @@
   
     </div>
 
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/Draggable.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/EasePack.min.js"></script>
     
     <script type="module" src="./JS/main.js"></script>
