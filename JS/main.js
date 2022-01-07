@@ -37,7 +37,7 @@ const moveToSlide = (track, currentSlide, targetSlide) => {
     let tween = gsap.to(".carousel-slide", {
       x: -slideX,
       duration: 1.5,
-      ease: "expo.inOut",
+      ease: "power3",
       stagger: -0.2,
     });
     tween.play();
@@ -46,7 +46,7 @@ const moveToSlide = (track, currentSlide, targetSlide) => {
     let tween = gsap.to(".carousel-slide", {
       x: -slideX,
       duration: 1.5,
-      ease: "expo.inOut",
+      ease: "power3",
       stagger: 0.2,
     });
     tween.play();
@@ -120,16 +120,20 @@ const updateDots = (currentDot, targetDot) => {
 };
 
 const MasterTimeline = gsap.timeline({ defaults: { duration: 1 } });
-MasterTimeline.from(".main-container", {
+MasterTimeline.from([".main-container"], {
   y: "100%",
   x: 0,
   opacity: 0,
-  ease: "power4.out",
+  ease: "power2.inOut",
   delay: 1,
 }).from(".carousel-track", {
   opacity: 0,
   scale: 0.8,
   ease: "power1.out",
   delay: 1,
-});
+}).from(".carousel-nav", {
+  opacity: 0,
+  ease: "power1.out",
+})
+  
 

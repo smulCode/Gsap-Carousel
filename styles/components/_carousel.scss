@@ -4,7 +4,7 @@
   // border: 10px solid blue;
   // height: 68vh;
   min-width: 100vw;
-  padding: 8em 7em;
+  padding: 9em;
   height: 600px;
   width: 800px;
 
@@ -17,7 +17,7 @@
   &::before {
     position: absolute;
     inset: 0;
-    backdrop-filter: blur(3px); // This be the blur
+    backdrop-filter: blur(3px); 
     content: "";
   }
 }
